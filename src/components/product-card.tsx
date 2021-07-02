@@ -13,7 +13,7 @@ const Card: FC<Props> = ({ data }) => {
   const parsedPrice = parseMoneyValueWithCurrency(price);
 
   return (
-    <div className="card border-0">
+    <div className="card border-0 h-100">
       <img
         src={`${process.env.PUBLIC_URL}${thumbnailUrl}`}
         className="card-img-top"
@@ -27,17 +27,34 @@ const Card: FC<Props> = ({ data }) => {
           {Array.from({ length: 5 }).map(() => (
             <AiFillStar />
           ))}
-          <span className="text-muted">({rating.total})</span>
+          <div className="text-body" style={{ fontSize: 14 }}>
+            (
+            <a href="/" className="text-body">
+              {rating.total}
+            </a>
+            )
+          </div>
         </div>
-        <p className="card-title fs-4 fw-bold">{name}</p>
-        <p className="text-brand fs-3 fw-bold">{parsedPrice.default}</p>
+
+        <p className="card-title fs-4 flex-grow-1 d-flex align-items-center">
+          {name}
+        </p>
+        <div className="d-flex justify-content-center">
+          {data.price.sale && (
+            <p className="text-decoration-line-through text-dark fs-4 me-4">
+              {parsedPrice.default}
+            </p>
+          )}
+          <p className="text-brand fs-4 fw-bold">{parsedPrice.sale || parsedPrice.default}</p>
+        </div>
+
+        <button
+          type="button"
+          className="btn btn-brand text-white block py-2 fs-5 fw-bold w-100"
+        >
+          Add to cart
+        </button>
       </div>
-      <button
-        type="button"
-        className="btn btn-brand text-white block mx-4 py-2 fs-5 fw-bold"
-      >
-        Add to cart
-      </button>
     </div>
   );
 };

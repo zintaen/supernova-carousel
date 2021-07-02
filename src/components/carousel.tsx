@@ -1,6 +1,7 @@
 import { FC, useEffect } from 'react';
 import cn from 'classnames';
 import { useLocation } from 'react-router-dom';
+import { AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
 
 import mockApi from 'mock/top-product';
 import Card from './product-card';
@@ -32,7 +33,7 @@ const Carousel: FC<Props> = ({ name }) => {
   }, []);
 
   return (
-    <div className="row gx-2 mx-auto my-auto justify-content-center">
+    <div className="row gx-2 mx-auto my-auto justify-content-center position-relative">
       <div
         id={uniqueCarouselId}
         className="carousel slide"
@@ -55,27 +56,21 @@ const Carousel: FC<Props> = ({ name }) => {
         </div>
 
         <button
-          className="carousel-control-prev"
+          className="carousel-direction start rounded-circle border-0 bg-white position-absolute top-50 shadow"
           type="button"
           data-bs-target={`#${uniqueCarouselId}`}
           data-bs-slide="prev"
         >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
+          <AiOutlineLeft className="fs-2" />
           <span className="visually-hidden">Previous</span>
         </button>
         <button
-          className="carousel-control-next"
+          className="carousel-direction end rounded-circle border-0 bg-white position-absolute top-50 shadow"
           type="button"
           data-bs-target={`#${uniqueCarouselId}`}
           data-bs-slide="next"
         >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
+          <AiOutlineRight className="fs-2" />
           <span className="visually-hidden">Next</span>
         </button>
       </div>

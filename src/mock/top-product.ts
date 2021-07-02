@@ -4,30 +4,28 @@ export default [
   {
     id: 1,
     thumbnailUrl: '/images/top-product-1.jpeg',
-    name: 'Sunny Honey Bali Bronzing Bundle',
+    name: 'Like A Virgin Hair Masque',
     price: {
       format: '{{currency}}{{value}}',
       currency: '$',
-      default: 77.7,
-      sale: 52.8,
+      default: 44.9,
     },
     rating: {
-      total: 3612,
+      total: 3365,
       averageScore: 4.5,
     },
   },
   {
     id: 2,
     thumbnailUrl: '/images/top-product-2.jpeg',
-    name: 'Sunny Honey Bali Bronzing Bundle',
+    name: 'Deep Clean Scalp Scrub',
     price: {
       format: '{{currency}}{{value}}',
       currency: '$',
-      default: 77.7,
-      sale: 52.8,
+      default: 36.9,
     },
     rating: {
-      total: 3612,
+      total: 173,
       averageScore: 4.5,
     },
   },
@@ -38,18 +36,18 @@ export default [
     price: {
       format: '{{currency}}{{value}}',
       currency: '$',
-      default: 77.7,
-      sale: 52.8,
+      default: 73.9,
+      sale: 46.9,
     },
     rating: {
-      total: 3612,
+      total: 3669,
       averageScore: 4.5,
     },
   },
   {
     id: 4,
     thumbnailUrl: '/images/top-product-4.jpeg',
-    name: 'Sunny Honey Bali Bronzing Bundle',
+    name: `That's A Wrap Bundle`,
     price: {
       format: '{{currency}}{{value}}',
       currency: '$',
@@ -64,15 +62,14 @@ export default [
   {
     id: 5,
     thumbnailUrl: '/images/top-product-5.jpeg',
-    name: 'Sunny Honey Bali Bronzing Bundle',
+    name: 'Bali Buffing Sugar',
     price: {
       format: '{{currency}}{{value}}',
       currency: '$',
-      default: 77.7,
-      sale: 52.8,
+      default: 34.9,
     },
     rating: {
-      total: 3612,
+      total: 98,
       averageScore: 4.5,
     },
   },
