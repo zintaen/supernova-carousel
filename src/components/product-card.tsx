@@ -1,8 +1,8 @@
 import { FC } from 'react';
-import { AiFillStar } from 'react-icons/ai';
 
 import { TopProductResponse } from 'types';
 import { parseMoneyValueWithCurrency } from 'utils';
+import RatingStars from './rating-stars';
 
 type Props = {
   data: Omit<TopProductResponse, 'id'>;
@@ -24,9 +24,7 @@ const Card: FC<Props> = ({ data }) => {
       />
       <div className="card-body d-flex flex-column align-items-center text-center">
         <div className="d-flex align-items-center mb-2 text-brand">
-          {Array.from({ length: 5 }).map(() => (
-            <AiFillStar />
-          ))}
+          <RatingStars total={data.rating.averageScore} />
           <div className="text-body" style={{ fontSize: 14 }}>
             (
             <a href="/" className="text-body">
@@ -45,7 +43,9 @@ const Card: FC<Props> = ({ data }) => {
               {parsedPrice.default}
             </p>
           )}
-          <p className="text-brand fs-4 fw-bold">{parsedPrice.sale || parsedPrice.default}</p>
+          <p className="text-brand fs-4 fw-bold">
+            {parsedPrice.sale || parsedPrice.default}
+          </p>
         </div>
 
         <button

@@ -12,7 +12,7 @@ export default [
     },
     rating: {
       total: 3365,
-      averageScore: 4.5,
+      averageScore: 5,
     },
   },
   {
